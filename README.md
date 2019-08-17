@@ -268,7 +268,7 @@ The service catalog is a microservice that aggregates all service contracts in t
 
 A catalog is *not* a registry. A service registry enumerates services currently deployed to a particular environment. A service catalog, on the other hand, enumerates services and versions that are *available* to be deployed to any environment.
 
-The catalog is populated by continuous integration. Whenever a service is built, the CI pipeline publishes a version of the contract into the service catalog. The published contract is given the same version as the artifacts associated with it.
+The catalog is populated by periodically scanning Github repositories for contracts. It keeps both a current copy of the contract from the main/develop branch of the repo, as well as the successful versions of the contract indicated by GIT tags.
 
 The catalog supports querying services in flexible ways, including:
 
